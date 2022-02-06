@@ -1,0 +1,53 @@
+﻿@model TestTask_versta24.Models.Order
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Создание заказа</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CitySender" class="control-label"></label>
+                <input asp-for="CitySender" class="form-control" />
+                <span asp-validation-for="CitySender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AddressSender" class="control-label"></label>
+                <input asp-for="AddressSender" class="form-control" />
+                <span asp-validation-for="AddressSender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CityRecipient" class="control-label"></label>
+                <input asp-for="CityRecipient" class="form-control" />
+                <span asp-validation-for="CityRecipient" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AddressRecipient" class="control-label"></label>
+                <input asp-for="AddressRecipient" class="form-control" />
+                <span asp-validation-for="AddressRecipient" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WeightPackage" class="control-label"></label>
+                <input asp-for="WeightPackage" class="form-control" />
+                <span asp-validation-for="WeightPackage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateGet" class="control-label"></label>
+                <input asp-for="DateGet" class="form-control" />
+                <span asp-validation-for="DateGet" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Создать" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Order">Назад к списку заказов</a>
+</div>

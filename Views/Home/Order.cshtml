@@ -1,0 +1,73 @@
+﻿@model IEnumerable<TestTask_versta24.Models.Order>
+
+@{
+    ViewData["Title"] = "Order";
+}
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Список заказов</h2>
+        </div>
+        <div class="col-6 text-right">
+            <a asp-action="Create" class="btn btn-primary">
+                Создать новый заказ
+            </a>
+        </div>
+    </div>
+
+    <br /><br />
+
+    @if (Model.Count() > 0)
+    {
+        <table class="table table-bordered table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>
+                        Номер заказа
+                    </th>
+                    <th>
+                        Город отправителя
+                    </th>
+                    <th>
+                        Адрес отправителя
+                    </th>
+                    <th>
+                        Город получателя
+                    </th>
+                    <th>
+                        Адрес получателя
+                    </th>
+                    <th>
+                        Вес груза
+                    </th>
+                    <th>
+                        Дата забора груза
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var obj in Model)
+                {
+                    <tr>
+                        <td>@obj.Number</td>
+                        <td>@obj.CitySender</td>
+                        <td>@obj.AddressSender</td>
+                        <td>@obj.CityRecipient</td>
+                        <td width="15%">@obj.AddressRecipient</td>
+                        <td width="5%">@obj.WeightPackage</td>
+                        <td width="5%">@obj.DateGet</td>
+                    </tr>
+                }
+
+
+
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>Нет доступных заказов.</p>
+    }
+</div>
+
